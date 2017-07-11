@@ -2,7 +2,6 @@ $(document).ready(function() {
   $("form#word-puzzle").submit(function(event) {
     var puzzleInput = $("input#puzzleString").val();
     var puzzleOutput = '';
-
     var vowels = "aeiouAEIOU";
 
     for (var index = 0; index < puzzleInput.length; index += 1) {
@@ -14,14 +13,10 @@ $(document).ready(function() {
         puzzleOutput += char;
       }
     }
-
+    
     $(".puzzle-result").append(puzzleOutput);
-    // show output
-    // hide form
     $(".puzzle-result").show();
-
-
-
+    $("form#word-puzzle").hide();
     event.preventDefault();
   });
 });
